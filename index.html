@@ -1,0 +1,331 @@
+
+import React from 'react';
+import { Button } from '@/components/ui/button';
+import { Rocket } from 'lucide-react';
+
+const Hero = () => {
+  return (
+    <section className="py-20 md:py-32 overflow-hidden" id="benefits-section">
+      <div className="container px-4 md:px-6">
+        <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+          <div className="flex flex-col justify-center space-y-4">
+            <div className="space-y-2">
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-entrée-800 to-entrée-400">
+                Promos and Benefits for Entrée Portfolio Co's
+              </h1>
+              <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
+                We've generated some exclusive offers that you may find interesting for building your startup 🚀
+              </p>
+            </div>
+            <div className="flex flex-col gap-2 min-[400px]:flex-row">
+              <Button 
+                className="bg-entrée-800 hover:bg-entrée-700 inline-flex h-10 items-center justify-center rounded-md px-8 text-sm font-medium text-white shadow transition-colors"
+                onClick={() => {
+                  const element = document.getElementById('benefits-section');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
+                <Rocket className="mr-2 h-4 w-4" /> Browse Benefits
+              </Button>
+            </div>
+          </div>
+          <div className="flex items-center justify-center">
+            <div className="relative h-[350px] w-[350px] md:h-[400px] md:w-[400px] lg:h-[450px] lg:w-[450px]">
+              {/* Animated floating logos */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full">
+                {/* Background gradient bubble */}
+                <div className="absolute inset-0 bg-gradient-to-r from-entrée-50/50 to-entrée-400/50 rounded-full blur-3xl animate-float"></div>
+                
+                {/* Central circle with text */}
+                <div className="absolute inset-[15%] bg-white rounded-full border border-entrée-100 shadow-card flex items-center justify-center z-10">
+                  <div className="text-center p-8">
+                    <span className="text-5xl font-bold text-entrée-800 block mb-2">20+</span>
+                    <span className="text-lg text-gray-600">Exclusive Partner Benefits</span>
+                  </div>
+                </div>
+                
+                {/* Floating logos */}
+                <img 
+                  src="/lovable-uploads/6bb17c5c-42cb-4862-972b-57ee79c04a34.png" 
+                  alt="CloudZone Logo" 
+                  className="absolute w-16 h-16 object-contain animate-float-slow"
+                  style={{ top: '10%', left: '20%' }}
+                />
+                <img 
+                  src="/lovable-uploads/df2974c2-3f95-4bfa-b5f4-cf439a99999e.png" 
+                  alt="Google Logo" 
+                  className="absolute w-16 h-16 object-contain animate-float-delay-1"
+                  style={{ top: '15%', right: '15%' }}
+                />
+                <img 
+                  src="/lovable-uploads/7e55227d-51a5-4a58-bc01-e05be67ac065.png" 
+                  alt="Microsoft Logo" 
+                  className="absolute w-16 h-16 object-contain animate-float-delay-2"
+                  style={{ bottom: '15%', left: '15%' }}
+                />
+                <img 
+                  src="/lovable-uploads/4b8519dd-4521-4e62-b5a1-306d1ea766f2.png" 
+                  alt="AWS Logo" 
+                  className="absolute w-16 h-16 object-contain animate-float-delay-3"
+                  style={{ bottom: '10%', right: '20%' }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
+
+import React from 'react';
+import BenefitCard, { BenefitProps } from './BenefitCard';
+
+// Sample data for benefits
+const benefits: BenefitProps[] = [
+  {
+    logo: "https://placeholder.svg",
+    title: "AWS Startup Credits",
+    description: "Get up to $100,000 in AWS credits for your startup to build your infrastructure.",
+    promoCode: "ENTRÉE-AWS-2025",
+    link: {
+      url: "#",
+      label: "Claim Benefit"
+    }
+  },
+  {
+    logo: "https://placeholder.svg",
+    title: "Google Cloud for Startups",
+    description: "Access $10,000 in Google Cloud credits and technical support for your growing business.",
+    promoCode: "ENTRÉE-GCLOUD-2025",
+    link: {
+      url: "#",
+      label: "Learn More"
+    }
+  },
+  {
+    logo: "https://placeholder.svg",
+    title: "Stripe Payment Processing",
+    description: "No fees on your first $50,000 in processed payments and discounted rates thereafter.",
+    promoCode: "ENTRÉE-STRIPE-25",
+    link: {
+      url: "#",
+      label: "Activate Offer"
+    }
+  },
+  {
+    logo: "https://placeholder.svg",
+    title: "HubSpot for Startups",
+    description: "Up to 90% off HubSpot software in your first year, plus free educational resources.",
+    promoCode: "ENTRÉE-HSPOT-90",
+    link: {
+      url: "#",
+      label: "Get Started"
+    }
+  },
+  {
+    logo: "https://placeholder.svg",
+    title: "Notion Enterprise Plan",
+    description: "Free 12-month Notion Enterprise plan for your team with advanced collaboration features.",
+    promoCode: "ENTRÉE-NOTION-2025",
+    link: {
+      url: "#",
+      label: "Redeem Offer"
+    }
+  },
+  {
+    logo: "https://placeholder.svg",
+    title: "Figma Professional",
+    description: "6 months of Figma Professional plan for your design team, completely free.",
+    promoCode: "ENTRÉE-FIGMA-6MO",
+    link: {
+      url: "#",
+      label: "Access Now"
+    }
+  },
+  {
+    logo: "https://placeholder.svg",
+    title: "Slack Premium Credits",
+    description: "Get $1,000 in credits for Slack Premium to enhance your team communication.",
+    promoCode: "ENTRÉE-SLACK-1K",
+    link: {
+      url: "#",
+      label: "Apply Credits"
+    }
+  },
+  {
+    logo: "https://placeholder.svg",
+    title: "Brex Business Account",
+    description: "Exclusive perks including waived fees and 50,000 points upon signup.",
+    promoCode: "ENTRÉE-BREX-50K",
+    link: {
+      url: "#",
+      label: "Sign Up Now"
+    }
+  },
+  {
+    logo: "https://placeholder.svg",
+    title: "MongoDB Atlas Credits",
+    description: "$5,000 in MongoDB Atlas credits to build your database infrastructure.",
+    promoCode: "ENTRÉE-MONGO-5K",
+    link: {
+      url: "#",
+      label: "Claim Credits"
+    }
+  }
+];
+
+const BenefitsGrid = () => {
+  return (
+    <section className="py-16 bg-entrée-50" id="exclusive-benefits">
+      <div className="container px-4 md:px-6">
+        <div className="flex flex-col items-center justify-center text-center mb-12">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-entrée-800">Exclusive Benefits</h2>
+          <p className="mt-4 text-lg text-muted-foreground max-w-[700px]">
+            Receive access to these special deals from our partners.
+          </p>
+        </div>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {benefits.map((benefit, index) => (
+            <BenefitCard key={index} {...benefit} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default BenefitsGrid;
+
+import type { Config } from "tailwindcss";
+
+export default {
+	darkMode: ["class"],
+	content: [
+		"./pages/**/*.{ts,tsx}",
+		"./components/**/*.{ts,tsx}",
+		"./app/**/*.{ts,tsx}",
+		"./src/**/*.{ts,tsx}",
+	],
+	prefix: "",
+	theme: {
+		container: {
+			center: true,
+			padding: '2rem',
+			screens: {
+				'2xl': '1400px'
+			}
+		},
+		extend: {
+			colors: {
+				border: 'hsl(var(--border))',
+				input: 'hsl(var(--input))',
+				ring: 'hsl(var(--ring))',
+				background: 'hsl(var(--background))',
+				foreground: 'hsl(var(--foreground))',
+				primary: {
+					DEFAULT: 'hsl(var(--primary))',
+					foreground: 'hsl(var(--primary-foreground))'
+				},
+				secondary: {
+					DEFAULT: 'hsl(var(--secondary))',
+					foreground: 'hsl(var(--secondary-foreground))'
+				},
+				destructive: {
+					DEFAULT: 'hsl(var(--destructive))',
+					foreground: 'hsl(var(--destructive-foreground))'
+				},
+				muted: {
+					DEFAULT: 'hsl(var(--muted))',
+					foreground: 'hsl(var(--muted-foreground))'
+				},
+				accent: {
+					DEFAULT: 'hsl(var(--accent))',
+					foreground: 'hsl(var(--accent-foreground))'
+				},
+				popover: {
+					DEFAULT: 'hsl(var(--popover))',
+					foreground: 'hsl(var(--popover-foreground))'
+				},
+				card: {
+					DEFAULT: 'hsl(var(--card))',
+					foreground: 'hsl(var(--card-foreground))'
+				},
+				entrée: {
+					50: '#E3EAF6',
+					100: '#d6e0f2',
+					200: '#adc1e5',
+					300: '#84a3d8',
+					400: '#749CD6',
+					500: '#4c77c1',
+					600: '#385b9d',
+					700: '#25407a',
+					800: '#11295A',
+					900: '#0b1a38',
+				},
+				sidebar: {
+					DEFAULT: 'hsl(var(--sidebar-background))',
+					foreground: 'hsl(var(--sidebar-foreground))',
+					primary: 'hsl(var(--sidebar-primary))',
+					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+					accent: 'hsl(var(--sidebar-accent))',
+					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+					border: 'hsl(var(--sidebar-border))',
+					ring: 'hsl(var(--sidebar-ring))'
+				}
+			},
+			borderRadius: {
+				lg: 'var(--radius)',
+				md: 'calc(var(--radius) - 2px)',
+				sm: 'calc(var(--radius) - 4px)'
+			},
+			keyframes: {
+				'accordion-down': {
+					from: {
+						height: '0'
+					},
+					to: {
+						height: 'var(--radix-accordion-content-height)'
+					}
+				},
+				'accordion-up': {
+					from: {
+						height: 'var(--radix-accordion-content-height)'
+					},
+					to: {
+						height: '0'
+					}
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' },
+				},
+				'float-circle': {
+					'0%, 100%': { transform: 'translateY(0) translateX(0) rotate(0deg)' },
+					'25%': { transform: 'translateY(-5px) translateX(5px) rotate(2deg)' },
+					'50%': { transform: 'translateY(-10px) translateX(0) rotate(5deg)' },
+					'75%': { transform: 'translateY(-5px) translateX(-5px) rotate(2deg)' },
+				}
+			},
+			animation: {
+				'accordion-down': 'accordion-down 0.2s ease-out',
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 6s ease-in-out infinite',
+				'float-slow': 'float-circle 12s ease-in-out infinite',
+				'float-delay-1': 'float-circle 12s ease-in-out 1s infinite',
+				'float-delay-2': 'float-circle 12s ease-in-out 2s infinite',
+				'float-delay-3': 'float-circle 12s ease-in-out 3s infinite',
+			},
+			boxShadow: {
+				'card': '0 10px 30px -5px rgba(0, 0, 0, 0.1)',
+			}
+		}
+	},
+	plugins: [require("tailwindcss-animate")],
+} satisfies Config;
+
+
